@@ -1,25 +1,24 @@
-import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { RouterModule } from '@angular/router';
-import { FormsModule } from '@angular/forms';
+import { NgModule } from '@angular/core';
 
+import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { TrackViewComponent } from './track-view/track-view.component';
+import {TrackService} from "./services/track.service";
+import {FormsModule} from "@angular/forms";
+import {DataService} from "./services/data.service";
 
 @NgModule({
+  declarations: [
+    AppComponent,
+    TrackViewComponent
+  ],
   imports: [
     BrowserModule,
+    AppRoutingModule,
     FormsModule
   ],
-  declarations: [
-    AppComponent
-  ],
-  bootstrap: [ AppComponent ]
+  providers: [TrackService, DataService],
+  bootstrap: [AppComponent]
 })
 export class AppModule { }
-
-
-/*
-Copyright Google LLC. All Rights Reserved.
-Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
-*/
