@@ -5,16 +5,7 @@
       (input)="processTrack()"
       rows="5">
       </textarea>
-  </div>
-  <div class="row">
-    <table>
-      <tr><td>Lap</td><td colspan="1000">Checkpoints</td></tr>
-      <tr *ngFor="let trackRow of rating?.trackByLap; let i = index">
-        <td>{{i+1}}</td>
-        <td *ngFor="let cp of trackRow">{{cp}}</td>
-      </tr>
-    </table>
-  </div>
+  </div>  
   <div class="row">
     <table>
       <tr><td>Pos</td><td>Rider #</td><td>Laps</td></tr>
@@ -22,6 +13,15 @@
         <td>{{rider.position}}</td>
         <td>{{rider.riderId}}</td>
         <td>{{rider.laps}}</td>
+      </tr>
+    </table>
+  </div>
+  <div class="row">
+    <table>
+      <tr><td>Lap</td><td colspan="1000">Checkpoints</td></tr>
+      <tr *ngFor="let trackRow of rating?.trackByLap; let i = index">
+        <td>{{i+1}}</td>
+        <td *ngFor="let cp of trackRow">{{cp}}</td>
       </tr>
     </table>
   </div>
