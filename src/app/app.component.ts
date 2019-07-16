@@ -13,10 +13,14 @@ export class AppComponent  {
     this._rawCheckpoints = value;
   }
   constructor() {
+    const storedCheckpoints = localStorage.getItem("checkpoints");
+    if (storedCheckpoints)
+      this._rawCheckpoints = storedCheckpoints;
     this.processTrack();
   }
   processTrack() {
     this.rating = new TrackService().process(this._rawCheckpoints);
+    localStorage.setItem("checkpoints", this._rawCheckpoints);
   }
 }
 
