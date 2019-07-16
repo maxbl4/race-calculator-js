@@ -10,9 +10,9 @@
     <table>
       <tr><td>Pos</td><td>Rider #</td><td>Laps</td></tr>
       <tr *ngFor="let rider of rating?.table">
-        <td>{{rider.position}}</td>
-        <td>{{rider.riderId}}</td>
-        <td>{{rider.laps}}</td>
+        <td class="rider-{{rider.position}}">{{rider.position}}</td>
+        <td class="rider-{{rider.position}}">{{rider.riderId}}</td>
+        <td class="rider-{{rider.position}}">{{rider.laps}}</td>
       </tr>
     </table>
   </div>

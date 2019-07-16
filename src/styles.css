@@ -1,5 +1,9 @@
 /* Global Styles */
 
+.rider-1, .rider-2, .rider-3 {
+  background-color: #a0ffa0;
+}
+
 * {
   font-family: 'Roboto', Arial, sans-serif;
   color: #616161;
