@@ -7,8 +7,8 @@ function Main()
   $publishRoot = "./_build"
   $containerRoot = "./_build/bin"
   $imageName = "mini-timing"
-  #rmdir -Force -Recurs $publishRoot
-  #ng build --prod --output-path _build\
+  rmdir -Force -Recurs $publishRoot
+  ng build --prod --output-path _build\
 
   #$version
   docker build --pull -t "maxbl4/$($imageName):$version" -t "maxbl4/$($imageName):latest" -f dockerfile $publishRoot
