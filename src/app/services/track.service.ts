@@ -1,3 +1,5 @@
+import { Injectable } from "@angular/core";
+@Injectable()
 export class TrackService {
   process (trackStr: string) : Rating {
     const riderLaps = new Map<string, number>();
