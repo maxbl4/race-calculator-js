@@ -6,7 +6,7 @@ import {DataService} from "../services/data.service";
   selector: 'app-track-view',
   template: `
     <div class="row">
-    <textarea class="form-control" 
+    <textarea class="form-control"
       [(ngModel)]="rawCheckpoints"
               style="width:100%"
               (input)="processTrack()"
@@ -16,8 +16,15 @@ import {DataService} from "../services/data.service";
     <div class="row">
       <table class="table table-sm table-striped">
         <thead>
-          <tr><th colspan="3">Результаты</th></tr>
-          <tr><th>Позиция</th><th>Номер участника</th><th>Кругов</th></tr>
+          <tr><th colspan="3">Результаты
+            <span *ngIf="rating?.directives.teamSize > 1">(включён режим командной гонки)</span>
+          </th></tr>
+          <tr>
+            <th>Позиция</th>
+            <th *ngIf="!(rating?.directives.teamSize > 1)">Номер участника</th>
+            <th *ngIf="rating?.directives.teamSize > 1">Номер команды</th>
+            <th>Кругов</th>
+          </tr>
         </thead>
         <tbody>
           <tr *ngFor="let rider of rating?.table">
